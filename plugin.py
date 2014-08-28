@@ -2943,7 +2943,7 @@ class NFL(callbacks.Plugin):
             irc.reply("Sorry, the kickoff date for the {0} NFL Season has already passed.".format(now.year))
         else:  # has not passed. do some math.
             hl = kot-now
-            irc.reply("There are {0} days, {1} hours, {2} mins, {3} seconds until the start of the {4} season".format(\
+            irc.reply("There are {0} days, {1} hours, {2} mins, {3} seconds until the start of the {4} NFL season (GB@SEA 9/4 8:30ET)".format(\
                             hl.days, hl.seconds/60/60, hl.seconds/60%60, hl.seconds%60, now.year))
             
     nflcountdown = wrap(nflcountdown)
