@@ -2928,16 +2928,16 @@ class NFL(callbacks.Plugin):
         # to hit Thursday. If it's after Thursday, we add enough days to get to the next Thursday.
         wd = base.weekday()
         # do some timedelta math.
-        if wd == 0: ma = 4
-        elif wd == 1: ma = 3
-        elif wd == 2: ma = 2
-        elif wd == 3: ma = 1
-        elif wd == 4: ma = 0
-        elif wd == 5: ma = 6
-        elif wd == 6: ma = 5
+        if wd == 0: ma = 3
+        elif wd == 1: ma = 2
+        elif wd == 2: ma = 1
+        elif wd == 3: ma = 0
+        elif wd == 4: ma = 6
+        elif wd == 5: ma = 5
+        elif wd == 6: ma = 4
         # now lets take ma and timedelta. this should be kickoff date unless there is something that pushes it like in 2013.
         kod = base+datetime.timedelta(days=+(ma))  # date itself. we turn it into localtime below.
-        kot = datetime.datetime(kod.year, kod.month, kod.day, 20, 30)  # if not run in Eastern, it's off. im not doing timezones.
+        kot = datetime.datetime(kod.year, kod.month, kod.day, 18, 30)  # if not run in Mountain, it's off. im not doing timezones.
         # did the kickoff date already pass?
         if kod < now:  # it passed. this will reset when the year passes.
             irc.reply("Sorry, the kickoff date for the {0} NFL Season has already passed.".format(now.year))
